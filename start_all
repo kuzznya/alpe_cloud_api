@@ -1,0 +1,22 @@
+#!/bin/sh
+
+set -e
+
+DEPLOY_DIR="deploy"
+
+[ ! -d $DEPLOY_DIR ] && mkdir $DEPLOY_DIR
+
+a=$(ls -d */)
+
+for i in $a
+do
+  cd "$i" || exit
+  [ ! -f "pom.xml" ] && continue
+  echo "Run service ${i%/}"
+  chmod +x mvnw
+  bash mvnw spring-boot:run \
+    > "../deploy/${i%/}-run.log" & \
+    echo $! > "../$DEPLOY_DIR/${i%/}-run.pid" &
+
+  cd ..
+done

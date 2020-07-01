@@ -1,0 +1,13 @@
+#!/bin/sh
+
+DEPLOY_DIR="deploy"
+
+a=$(ls -- $DEPLOY_DIR/*-run.pid)
+
+for i in $a
+do
+  echo "Kill process $i"
+  kill "$(cat "$i")"
+done
+
+rm -f -- $DEPLOY_DIR/*-run.pid
