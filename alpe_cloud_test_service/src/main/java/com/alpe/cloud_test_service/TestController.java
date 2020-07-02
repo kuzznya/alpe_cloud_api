@@ -9,6 +9,12 @@ public class TestController {
     @Value("${test.value}")
     private String testValue;
 
+    private final org.springframework.core.env.Environment env;
+
+    public TestController(org.springframework.core.env.Environment env) {
+        this.env = env;
+    }
+
     @GetMapping
     public String test() {
         return testValue;
@@ -17,5 +23,10 @@ public class TestController {
     @PostMapping
     public void setTestValue(@RequestParam String value) {
         this.testValue = value;
+    }
+
+    @DeleteMapping
+    public void resetTestValue() {
+        this.testValue = env.getProperty("test.value");
     }
 }
