@@ -16,6 +16,7 @@
         <module>alpe_cloud_config</module>
         <module>alpe_cloud_test_service</module>
         <module>alpe_cloud_gateway</module>
+        <module>alpe_zuul_gateway</module>
     </modules>
 
 </project>
