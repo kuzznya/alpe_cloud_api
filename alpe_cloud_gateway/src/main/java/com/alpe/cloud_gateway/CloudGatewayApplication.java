@@ -12,8 +12,11 @@ import org.springframework.scheduling.annotation.Scheduled;
 @EnableDiscoveryClient
 public class CloudGatewayApplication {
 
-    @Autowired
-    private ApplicationEventPublisher publisher;
+    private final ApplicationEventPublisher publisher;
+
+    public CloudGatewayApplication(ApplicationEventPublisher publisher) {
+        this.publisher = publisher;
+    }
 
     @Scheduled(fixedDelay=20000)
     public void refreshRoutes(){
