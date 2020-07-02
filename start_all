@@ -11,7 +11,7 @@ a=$(ls -d */)
 for i in $a
 do
   cd "$i" || exit
-  [ ! -f "pom.xml" ] && continue
+  [ ! -f "pom.xml" ] && cd .. && continue
   echo "Run service ${i%/}"
   chmod +x mvnw
   bash mvnw spring-boot:run \
