@@ -1,17 +1,17 @@
 # This workflow will build a Java project with Maven
 # For more information see: https://help.github.com/actions/language-and-framework-guides/building-and-testing-java-with-maven
 
-name: Cloud Config service CI
+name: Cloud Test service CI
 
 on:
   push:
     branches: [ master ]
     paths:
-      - 'alpe_cloud_config'
+      - 'alpe_cloud_test_service'
   pull_request:
     branches: [ master ]
     paths:
-      - 'alpe_cloud_config'
+      - 'alpe_cloud_test_service'
 
 jobs:
   build:
@@ -25,5 +25,5 @@ jobs:
         with:
           java-version: 11
       - name: Build with Maven
-        working-directory: ./alpe_cloud_config
+        working-directory: ./alpe_cloud_test_service
         run: mvn -B test -Dspring.profiles.active=test --file pom.xml
