@@ -1,0 +1,12 @@
+zuul:
+  routes:
+    services-status:
+      path: /services-status/**
+      url: ${EUREKA_SERVER:http://localhost:8761}
+    eureka:
+      path: /eureka/**
+      url: ${EUREKA_SERVER:http://localhost:8761}/eureka
+    test:
+      path: /test/**
+      service-id: test-service
+      strip-prefix: false
