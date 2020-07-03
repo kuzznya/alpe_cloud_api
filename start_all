@@ -1,6 +1,14 @@
 #!/bin/sh
 
-set -e
+config=""
+if [ "$1" = "zuul" ]
+then
+  config=zuul_gw
+else
+  config=spring_gw
+fi
+
+echo "Gateway configuration: $config"
 
 DEPLOY_DIR="deploy"
 
@@ -11,7 +19,16 @@ a=$(ls -d */)
 for i in $a
 do
   cd "$i" || exit
-  [ ! -f "pom.xml" ] && cd .. && continue
+
+  if
+  [ ! -f "pom.xml" ] ||
+  { [ $config != spring_gw ] && [ "$i" = "alpe_cloud_gateway/" ]; } ||
+  { [ $config != zuul_gw ] && [ "$i" = "alpe_zuul_gateway/" ]; }
+  then
+    cd ..
+    continue
+  fi
+
   echo "Run service ${i%/}"
   chmod +x mvnw
   bash mvnw spring-boot:run \

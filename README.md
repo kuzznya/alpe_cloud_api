@@ -17,7 +17,14 @@ To simplify development, all configs are loaded from
 
 ## Start
 
-Start all services: `bash start_all`  
+**Start all services:** `bash start_all`  
+There are two API Gateway configurations:
+1. `spring_gw` - Spring Cloud Gateway (running with WebFlux on Netty)  
+  This is default config
+2. `zuul_gw` - Netflix Zuul Gateway  
+  Add `zuul` to start services with Zuul Gateway
+  (`bash start_all zuul`)
+
 Stop: `bash stop_all`
 
 Logs are written to `/deploy` dir
