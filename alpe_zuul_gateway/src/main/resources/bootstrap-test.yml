@@ -1,6 +1,10 @@
 spring:
   application.name: zuul-gateway
   cloud:
-    config.enabled: false
+    config:
+      enabled: false
+      discovery.enabled: false
+    discovery:
+      enabled: false
 
 eureka.client.enabled: false
