@@ -1,7 +1,7 @@
 applications:
   - name: cloud-test
     memory: 512M
-    instances: 1
+    instances: 2
     path: target/alpe_cloud_test_service-0.0.1.jar
     env:
       SPRING_PROFILES_ACTIVE: cf

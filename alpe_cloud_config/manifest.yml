@@ -1,7 +1,7 @@
 applications:
   - name: cloud-config
     memory: 512M
-    instances: 1
+    instances: 2
     path: target/alpe_cloud_config-0.0.1.jar
     env:
       SPRING_PROFILES_ACTIVE: cf
