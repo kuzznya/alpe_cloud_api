@@ -10,7 +10,7 @@
     </parent>
     <groupId>com.alpe</groupId>
     <artifactId>alpe_zuul_gateway</artifactId>
-    <version>0.0.1-SNAPSHOT</version>
+    <version>0.0.1</version>
     <name>alpe_zuul_gateway</name>
     <description>ALPE Cloud - Zuul API Gateway for SAP Cloud</description>
 
@@ -28,6 +28,12 @@
         <dependency>
             <groupId>org.springframework.cloud</groupId>
             <artifactId>spring-cloud-starter-netflix-zuul</artifactId>
+        </dependency>
+
+        <dependency>
+            <groupId>org.springframework.boot</groupId>
+            <artifactId>spring-boot-starter-tomcat</artifactId>
+            <scope>provided</scope>
         </dependency>
 
         <dependency>

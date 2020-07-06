@@ -1,0 +1,11 @@
+eureka:
+  instance:
+    hostname: ${vcap.application.uris[0]}
+    non-secure-port-enabled: false
+    secure-port-enabled: true
+    secure-port: 443
+
+spring:
+  cloud:
+    config:
+      profile: cf

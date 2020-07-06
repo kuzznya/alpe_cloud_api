@@ -1,0 +1,10 @@
+applications:
+  - name: zuul-gateway
+    memory: 512M
+    instances: 1
+    path: target/alpe_zuul_gateway-0.0.1.jar
+    env:
+      SPRING_PROFILES_ACTIVE: cf
+      EUREKA_SERVER: 'https://cloud-discovery.cfapps.eu10.hana.ondemand.com'
+      JBP_CONFIG_OPEN_JDK_JRE: '{ jre: { version: 11.+ },
+      memory_calculator: { stack_threads: 50 } }'
