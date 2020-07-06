@@ -12,7 +12,7 @@
 
     <groupId>com.alpe</groupId>
     <artifactId>alpe_cloud_config</artifactId>
-    <version>0.0.1-SNAPSHOT</version>
+    <version>0.0.1</version>
     <name>alpe_cloud_config</name>
     <description>ALPE Cloud - Config service</description>
 
@@ -25,6 +25,12 @@
         <dependency>
             <groupId>org.springframework.cloud</groupId>
             <artifactId>spring-cloud-config-server</artifactId>
+        </dependency>
+
+        <dependency>
+            <groupId>org.springframework.boot</groupId>
+            <artifactId>spring-boot-starter-tomcat</artifactId>
+            <scope>provided</scope>
         </dependency>
 
         <dependency>

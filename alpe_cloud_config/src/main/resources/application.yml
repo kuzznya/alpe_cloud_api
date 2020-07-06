@@ -1,6 +1,6 @@
 server.port: 8888
 spring:
-  profiles.active: native
+  profiles.include: native
   cloud:
     config:
       server.native.searchLocations: classpath:/configs
