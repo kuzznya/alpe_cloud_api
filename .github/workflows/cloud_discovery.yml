@@ -36,7 +36,7 @@ jobs:
     needs: build
 
     steps:
-      - uses: cd3sandoval/cloud-foundry-action@1.1.1
+      - uses: d3sandoval/cloud-foundry-action@1.1.1
         with:
           args: push -f alpe_cloud_discovery/manifest.yml
         env:
