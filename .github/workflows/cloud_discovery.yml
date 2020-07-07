@@ -36,11 +36,11 @@ jobs:
     needs: build
 
     steps:
-      - uses: citizen-of-planet-earth/cf-cli-action@master
-        with:
-          cf_api: https://api.cf.eu10.hana.ondemand.com
-          cf_username: ${{ secrets.CF_USER }}
-          cf_password: ${{ secrets.CF_PASSWORD }}
-          cf_org: 6b6fe2b9trial_P00001trial
-          cf_space: dev
-          command: push -f alpe_cloud_discovery/manifest.yml
+      - uses: cd3sandoval/cloud-foundry-action@1.1.1
+        env:
+          CF_API: https://api.cf.eu10.hana.ondemand.com
+          CF_USERNAME: ${{ secrets.CF_USER }}
+          CF_PASSWORD: ${{ secrets.CF_PASSWORD }}
+          CF_TARGET_ORG: 6b6fe2b9trial_P00001trial
+          CF_TARGET_SPACE: dev
+        args: push -f alpe_cloud_discovery/manifest.yml
