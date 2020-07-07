@@ -43,4 +43,4 @@ jobs:
           cf_password: ${{ secrets.CF_PASSWORD }}
           cf_org: 6b6fe2b9trial_P00001trial
           cf_space: dev
-          command: push -f ./alpe_cloud_discovery/manifest.yml
+          command: push -f alpe_cloud_discovery/manifest.yml
