@@ -37,10 +37,11 @@ jobs:
 
     steps:
       - uses: cd3sandoval/cloud-foundry-action@1.1.1
+        with:
+          args: push -f alpe_cloud_discovery/manifest.yml
         env:
           CF_API: https://api.cf.eu10.hana.ondemand.com
           CF_USERNAME: ${{ secrets.CF_USER }}
           CF_PASSWORD: ${{ secrets.CF_PASSWORD }}
           CF_TARGET_ORG: 6b6fe2b9trial_P00001trial
           CF_TARGET_SPACE: dev
-        args: push -f alpe_cloud_discovery/manifest.yml
