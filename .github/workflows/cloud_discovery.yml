@@ -35,11 +35,10 @@ jobs:
 
     steps:
       - uses: citizen-of-planet-earth/cf-cli-action@master
-        working-directory: ./alpe_cloud_discovery
         with:
           cf_api: https://api.cf.eu10.hana.ondemand.com
           cf_username: ${{ secrets.CF_USER }}
           cf_password: ${{ secrets.CF_PASSWORD }}
           cf_org: 6b6fe2b9trial_P00001trial
           cf_space: dev
-          command: push -f manifest.yml
+          command: push -f ./alpe_cloud_discovery/manifest.yml
